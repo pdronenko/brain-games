@@ -23,6 +23,7 @@
     "eslint": "^5.13.0"
   },
   "dependencies": {
+    "readline-sync": "^1.4.9",
     "source-map-support": "^0.5.10"
   }
 }
