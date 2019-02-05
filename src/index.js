@@ -45,3 +45,4 @@ export const brainGameEngine = (game) => {
 
   if (questionNumber === 0) console.log(`Congratulations, ${name}!`);
 };
+// --- game engine code ends here ---
