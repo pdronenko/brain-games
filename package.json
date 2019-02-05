@@ -15,6 +15,11 @@
   },
   "author": "pdronenko",
   "license": "ISC",
+  "keywords": [
+    "brain games",
+    "hexlet",
+    "cli game"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
