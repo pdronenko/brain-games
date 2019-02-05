@@ -20,16 +20,21 @@ export const brainGames = () => {
 
 export const evenGame = () => {
   greeting();
-  const redBold = (text) => text.red.bold;
-  console.log(`Answer "${redBold('yes')}" if number ${"even".bold} otherwise answer "${redBold('no')}"`);
+  const redBold = text => text.red.bold;
+  console.log(`Answer "${redBold('yes')}" if number ${'even'.bold}, otherwise answer "${redBold('no')}".`);
 
   const name = askName();
+
+  const randomFunction = (min, max) => Math.floor(Math.random() * (max - min) + min);
+
+  const minNumber = 1;
+  const maxNumber = 100;
   let questionNumber = 3;
 
-  for (; questionNumber > 0 ; questionNumber--) {
-    const randomNumber = 2;
+  for (; questionNumber > 0; questionNumber -= 1) {
+    const randomNumber = randomFunction(minNumber, maxNumber);
     console.log(`Question: ${randomNumber}`);
-    const correctAnswer = randomNumber % 2 === 0 ? "yes" : "no";
+    const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
     const playerAnswer = readlineSync.question('Your answer: ');
     if (correctAnswer !== playerAnswer) {
       console.log(`"${redBold(playerAnswer)}" is wrong answer ;(.`);
@@ -37,8 +42,8 @@ export const evenGame = () => {
       console.log(`Let's try again, ${name}!`);
       break;
     }
-    console.log("Correct!");
+    console.log('Correct!');
   }
+
   if (questionNumber === 0) console.log(`Congratulations, ${name}!`);
 };
-
