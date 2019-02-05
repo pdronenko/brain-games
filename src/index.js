@@ -1,10 +1,11 @@
 import readlineSync from 'readline-sync';
 
+// I think it wasn't necessary to make text colored, but I realized it too late
 const colors = require('colors'); // eslint-disable-line no-unused-vars
 
 const askName = () => {
   const name = readlineSync.question('\nMay I have your name? ');
-  console.log(`Hello, ${name}!`);
+  console.log(`Hello, ${name}!\n`);
   return name;
 };
 
@@ -19,8 +20,25 @@ export const brainGames = () => {
 
 export const evenGame = () => {
   greeting();
-  console.log(`Answer ${'"yes"'.red} ${"if".bold} number even otherwise answer ${'"no"'.red}`);
+  const redBold = (text) => text.red.bold;
+  console.log(`Answer "${redBold('yes')}" if number ${"even".bold} otherwise answer "${redBold('no')}"`);
 
   const name = askName();
+  let questionNumber = 3;
+
+  for (; questionNumber > 0 ; questionNumber--) {
+    const randomNumber = 2;
+    console.log(`Question: ${randomNumber}`);
+    const correctAnswer = randomNumber % 2 === 0 ? "yes" : "no";
+    const playerAnswer = readlineSync.question('Your answer: ');
+    if (correctAnswer !== playerAnswer) {
+      console.log(`"${redBold(playerAnswer)}" is wrong answer ;(.`);
+      console.log(`Correct answer was "${redBold(correctAnswer)}".`);
+      console.log(`Let's try again, ${name}!`);
+      break;
+    }
+    console.log("Correct!");
+  }
+  if (questionNumber === 0) console.log(`Congratulations, ${name}!`);
 };
 
