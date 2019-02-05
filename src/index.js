@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-// I think it wasn't necessary to make text colored, but I realized it too late
+// I think it wasn't necessary to make text colored, but I don't know for sure
 const colors = require('colors'); // eslint-disable-line no-unused-vars
 
 const askName = () => {
