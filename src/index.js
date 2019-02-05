@@ -1,37 +1,38 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from 'hexlet-pairs';
 
-const askName = () => {
+// this code is only for brain-games task
+export const brainGames = () => {
+  console.log('Welcome to the Brain Games!\n');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  return name;
 };
 
-const newLine = () => '\n';
+// --- game engine code starts here ---
+const getDescription = game => car(game);
+const getInfo = game => cdr(game);
+const getQuestion = info => car(info);
+const getAnswer = info => cdr(info);
 
-const greeting = () => 'Welcome to the Brain Games!';
+// this is random number function
+// minNumber used for avoid zero in randomFunction result
+const minNumber = 1;
+const maxNumber = 100;
+export const randomFunction = () => Math.floor(Math.random() * (maxNumber - minNumber) + minNumber);
 
-export const brainGames = () => {
-  console.log(`${greeting()}${newLine()}`);
-  askName();
-};
+export const brainGameEngine = (game) => {
+  console.log(`Welcome to the Brain Games!\n${getDescription(game())}\n`);
 
-export const brainEven = () => {
-  greeting();
-  console.log(`Answer "yes" if number even, otherwise answer "no".${newLine()}`);
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!\n`);
 
-  const name = askName();
-  console.log('');
-
-  const randomFunction = (min, max) => Math.floor(Math.random() * (max - min) + min);
-
-  const minNumber = 1;
-  const maxNumber = 100;
   let questionNumber = 3;
 
   for (; questionNumber > 0; questionNumber -= 1) {
-    const randomNumber = randomFunction(minNumber, maxNumber);
-    console.log(`Question: ${randomNumber}`);
-    const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
+    const info = getInfo(game());
+    const question = getQuestion(info);
+    const correctAnswer = getAnswer(info);
+    console.log(`Question: ${question}`);
     const playerAnswer = readlineSync.question('Your answer: ');
     if (correctAnswer !== playerAnswer) {
       console.log(`"${playerAnswer}" is wrong answer ;(.`);
