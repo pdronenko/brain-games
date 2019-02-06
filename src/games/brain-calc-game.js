@@ -4,20 +4,13 @@ import { cons } from 'hexlet-pairs';
 const description = 'What is the result of the expression?';
 const getOperation = (operator, num1, num2) => {
   switch (operator) {
-    case 1:
-      return '+';
-    case 2:
-      return '-';
-    case 3:
-      return '*';
-    case '+':
-      return num1 + num2;
-    case '-':
-      return num1 - num2;
-    case '*':
-      return num1 * num2;
-    default:
-      return 'it is not operator!';
+    case 1: return '+';
+    case 2: return '-';
+    case 3: return '*';
+    case '+': return num1 + num2;
+    case '-': return num1 - num2;
+    case '*': return num1 * num2;
+    default: return 'it is not operator!';
   }
 };
 
