@@ -2,6 +2,7 @@ import { generateRandomNum, brainGameEngine } from '..';
 import { cons } from 'hexlet-pairs';
 
 const description = 'What is the result of the expression?';
+
 const getOperation = (operator, num1, num2) => {
   switch (operator) {
     case 1: return '+';
