@@ -2,8 +2,14 @@ import { generateRandomNum, brainGameEngine } from '..';
 import { cons } from 'hexlet-pairs';
 
 const description = 'What is the result of the expression?';
-const operation = (num1, num2, operator) => {
+const getOperation = (operator, num1, num2) => {
   switch (operator) {
+    case 1:
+      return '+';
+    case 2:
+      return '-';
+    case 3:
+      return '*';
     case '+':
       return num1 + num2;
     case '-':
@@ -22,11 +28,10 @@ const brainCalcGame = () => {
   const randomNum1 = generateRandomNum(minNum, maxNum);
   const randomNum2 = generateRandomNum(minNum, maxNum);
 
-  const operatorNum = generateRandomNum(minNum, maxNumOfOperator);
-  const operator = operatorNum === 1 ? '+' : operatorNum === 2 ? '-' : '*';
+  const operator = getOperation(generateRandomNum(minNum, maxNumOfOperator));
 
   const question = `${randomNum1} ${operator} ${randomNum2}`;
-  const correctAnswer = `${operation(randomNum1, randomNum2, operator)}`;
+  const correctAnswer = `${getOperation(operator, randomNum1, randomNum2)}`;
   return cons(description, cons(question, correctAnswer));
 };
 
