@@ -6,7 +6,7 @@ start:
 starteven:
 	npx babel-node -- src/bin/brain-even.js
 
-starteven:
+startcalc:
 	npx babel-node -- src/bin/brain-calc.js
 
 publish:
