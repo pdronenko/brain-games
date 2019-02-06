@@ -1,6 +1,6 @@
 {
   "name": "bg-pdronenko-hexlet",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "First project on Hexlet",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
