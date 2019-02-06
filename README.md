@@ -21,6 +21,14 @@ $ npm install -g bg-pdronenko-hexlet
 $ brain-even
 ```
 
-## Asciinema How-To video
+```sh
+$ brain-calc
+```
+
+## Brain-even How-To video
 
 [![asciicast](https://asciinema.org/a/225340.svg)](https://asciinema.org/a/225340)
+
+## Brain-calc How-To video
+
+[![asciicast](https://asciinema.org/a/225575.svg)](https://asciinema.org/a/225575)
