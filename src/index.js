@@ -16,9 +16,7 @@ const getAnswer = info => cdr(info);
 
 // this is random number function
 // minNumber used for avoid zero in randomFunction result
-const minNumber = 1;
-const maxNumber = 100;
-export const randomFunction = () => Math.floor(Math.random() * (maxNumber - minNumber) + minNumber);
+export const generateRandomNum = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 export const brainGameEngine = (game) => {
   console.log(`Welcome to the Brain Games!\n${getDescription(game())}\n`);
