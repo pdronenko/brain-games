@@ -18,10 +18,10 @@ const getOperation = (operator, num1, num2) => {
 const brainCalcGame = () => {
   const minNum = 1;
   const maxNum = 100;
-  const maxNumOfOperator = 4;
   const randomNum1 = generateRandomNum(minNum, maxNum);
   const randomNum2 = generateRandomNum(minNum, maxNum);
 
+  const maxNumOfOperator = 4;
   const operator = getOperation(generateRandomNum(minNum, maxNumOfOperator));
 
   const question = `${randomNum1} ${operator} ${randomNum2}`;
