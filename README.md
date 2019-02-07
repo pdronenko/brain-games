@@ -29,6 +29,10 @@ $ brain-calc
 $ brain-gcd
 ```
 
+```sh
+$ brain-progression
+```
+
 ## Brain-even How-To video
 
 <a href="https://asciinema.org/a/225852"><img src="https://asciinema.org/a/225852.svg" width="100%"/></a>
@@ -40,3 +44,7 @@ $ brain-gcd
 ## Brain-gcd How-To video
 
 <a href="https://asciinema.org/a/225855"><img src="https://asciinema.org/a/225855.svg" width="100%"/></a>
+
+## Brain-progression How-To video
+
+<a href="https://asciinema.org/a/225880"><img src="https://asciinema.org/a/225880.svg" width="100%"/></a>
