@@ -3,30 +3,36 @@ import generateRandomNum from '../utils';
 import { cons } from 'hexlet-pairs';
 
 const description = 'What is the result of the expression?';
+const minNum = 1;
+const maxNum = 100;
+const maxNumOfOperator = 4;
 
-const getOperation = (operator, num1, num2) => {
-  switch (operator) {
+const getOperatorByNum = (num) => {
+  switch (num) {
     case 1: return '+';
     case 2: return '-';
     case 3: return '*';
+    default: return 'wrong number!';
+  }
+};
+
+const getOperationResult = (operator, num1, num2) => {
+  switch (operator) {
     case '+': return num1 + num2;
     case '-': return num1 - num2;
     case '*': return num1 * num2;
-    default: return 'it is not operator!';
+    default: return 'wrong operator!';
   }
 };
 
 const brainCalcGame = () => {
-  const minNum = 1;
-  const maxNum = 100;
   const randomNum1 = generateRandomNum(minNum, maxNum);
   const randomNum2 = generateRandomNum(minNum, maxNum);
 
-  const maxNumOfOperator = 4;
-  const operator = getOperation(generateRandomNum(minNum, maxNumOfOperator));
+  const operator = getOperatorByNum(generateRandomNum(minNum, maxNumOfOperator));
 
   const question = `${randomNum1} ${operator} ${randomNum2}`;
-  const correctAnswer = `${getOperation(operator, randomNum1, randomNum2)}`;
+  const correctAnswer = `${getOperationResult(operator, randomNum1, randomNum2)}`;
   return cons(question, correctAnswer);
 };
 
