@@ -32,8 +32,8 @@ const generateProgGameInfo = () => {
   const hiddenNumPosition = generateRandomNum(minNum, maxNum);
 
   const progressionInfo = generateProgAndAnswer(progStartNum, constant, hiddenNumPosition);
-  const question = getProgString(progressionInfo);
   const correctAnswer = `${getAnswer(progressionInfo)}`;
+  const question = getProgString(progressionInfo);
   return cons(question, correctAnswer);
 };
 
