@@ -20,11 +20,7 @@ export const brainGameEngine = (description, game) => {
 
   const questionsToPlayerCount = 3;
 
-  for (let i = questionsToPlayerCount; i >= 0; i -= 1) {
-    if (i === 0) {
-      console.log(`Congratulations, ${playerName}!`);
-      break;
-    }
+  for (let i = questionsToPlayerCount; i > 0; i -= 1) {
     const gameInfo = game();
     const question = getQuestion(gameInfo);
     const correctAnswer = getAnswer(gameInfo);
@@ -36,8 +32,9 @@ export const brainGameEngine = (description, game) => {
       console.log(`"${playerAnswer}" is wrong answer ;(.`);
       console.log(`Correct answer was "${correctAnswer}".`);
       console.log(`Let's try again, ${playerName}!`);
-      break;
+      return;
     }
   }
+  console.log(`Congratulations, ${playerName}!`);
 };
 // --- game engine code ends here ---
