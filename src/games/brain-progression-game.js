@@ -8,13 +8,13 @@ const maxNum = 10;
 const getAnswer = info => car(info);
 const getProgString = info => cdr(info);
 
-const generateProg = (progStartNum, constant, hiddenNum) => {
+const generateProg = (progStartNum, constant, hiddenNumPosition) => {
   let currentNum = progStartNum;
   let answerNum = 0;
   let progString = '';
 
   for (let i = minNum; i <= maxNum; i += 1) {
-    if (i !== hiddenNum) {
+    if (i !== hiddenNumPosition) {
       progString = `${progString} ${currentNum}`;
       currentNum += constant;
     } else {
@@ -29,9 +29,9 @@ const generateProg = (progStartNum, constant, hiddenNum) => {
 const generateProgGameInfo = () => {
   const progStartNum = generateRandomNum(minNum, maxNum);
   const constant = generateRandomNum(minNum, maxNum);
-  const hiddenNum = generateRandomNum(minNum, maxNum);
+  const hiddenNumPosition = generateRandomNum(minNum, maxNum);
 
-  const progressionInfo = generateProg(progStartNum, constant, hiddenNum);
+  const progressionInfo = generateProg(progStartNum, constant, hiddenNumPosition);
   const question = getProgString(progressionInfo);
   const correctAnswer = `${getAnswer(progressionInfo)}`;
   return cons(question, correctAnswer);
