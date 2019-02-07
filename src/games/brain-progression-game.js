@@ -19,8 +19,8 @@ const generateProgAndAnswer = (progStartNum, constant, hiddenNumPosition) => {
       currentNum += constant;
     } else {
       answerNum = currentNum;
-      currentNum += constant;
       progString = `${progString} ..`;
+      currentNum += constant;
     }
   }
   return cons(answerNum, progString);
