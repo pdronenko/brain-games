@@ -4,7 +4,7 @@ import { cons } from 'hexlet-pairs';
 
 const description = 'What number is missing in the progression?';
 const minNum = 1;
-const maxNum = 11;
+const maxNum = 10;
 let answerNum = 0;
 
 const generateProg = (progStartNum, constant, questionNum) => {
@@ -19,7 +19,7 @@ const generateProg = (progStartNum, constant, questionNum) => {
     }
     return iter(num + constant, string, counter - 1);
   };
-  return iter(progStartNum, '', maxNum - 1);
+  return iter(progStartNum, '', maxNum);
 };
 
 const generateProgGameInfo = () => {

@@ -4,7 +4,7 @@ import { cons } from 'hexlet-pairs';
 
 const description = 'Find the greatest common divisor of given numbers.';
 const minNum = 2;
-const maxNum = 100;
+const maxNum = 99;
 
 const getGcd = (num, divisor) => (num % divisor === 0 ? divisor : getGcd(divisor, num % divisor));
 

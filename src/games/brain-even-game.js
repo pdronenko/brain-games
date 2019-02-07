@@ -5,7 +5,7 @@ import { cons } from 'hexlet-pairs';
 const description = 'Answer "yes" if number even, otherwise answer "no".';
 const isEven = num => num % 2 === 0;
 const minNum = 1;
-const maxNum = 100;
+const maxNum = 99;
 
 const generateEvenGameInfo = () => {
   const randomNumber = generateRandomNum(minNum, maxNum);

@@ -4,8 +4,8 @@ import { cons } from 'hexlet-pairs';
 
 const description = 'What is the result of the expression?';
 const minNum = 1;
-const maxNum = 100;
-const maxNumOfOperator = 4;
+const maxNum = 99;
+const maxNumOfOperator = 3;
 
 const getOperatorByNum = (num) => {
   switch (num) {
