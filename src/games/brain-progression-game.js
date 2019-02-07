@@ -15,14 +15,12 @@ const generateProgAndAnswer = (progStartNum, constant, hiddenNumPosition) => {
   let answerNum = 0;
   let progString = '';
 
-  for (let i = startPosition; i <= finishPosition; i += 1) {
+  for (let i = startPosition; i <= finishPosition; i += 1, currentNum += constant) {
     if (i !== hiddenNumPosition) {
       progString = `${progString} ${currentNum}`;
-      currentNum += constant;
     } else {
       answerNum = currentNum;
       progString = `${progString} ..`;
-      currentNum += constant;
     }
   }
   return cons(answerNum, progString);
