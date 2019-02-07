@@ -5,8 +5,8 @@ import { cons, car, cdr } from 'hexlet-pairs';
 const description = 'What number is missing in the progression?';
 const minNum = 1;
 const maxNum = 10;
-const startPosition = 1;
-const finishPosition = 10;
+const startPosition = minNum;
+const finishPosition = maxNum;
 const getAnswer = info => car(info);
 const getProgString = info => cdr(info);
 
