@@ -16,9 +16,8 @@ const generateProgAndAnswer = (progStartNum, constant, hiddenNumPosition) => {
   let progString = '';
 
   for (let i = startPosition; i <= finishPosition; i += 1, currentNum += constant) {
-    if (i !== hiddenNumPosition) {
-      progString = `${progString} ${currentNum}`;
-    } else {
+    if (i !== hiddenNumPosition) progString = `${progString} ${currentNum}`;
+    else {
       answerNum = currentNum;
       progString = `${progString} ..`;
     }
