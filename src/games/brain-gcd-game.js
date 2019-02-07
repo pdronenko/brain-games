@@ -3,26 +3,28 @@ import generateRandomNum from '../utils';
 import { cons } from 'hexlet-pairs';
 
 const description = 'Find the greatest common divisor of given numbers.';
-const minNum = 20;
+const minNum = 2;
 const maxNum = 100;
 
-const getGcd = (smallerNum, biggestNum) => {
-  if (biggestNum % smallerNum === 0) {
-    return smallerNum;
-  }
+const getGcd = (num1, num2) => {
+  const smallerNum = Math.min(num1, num2);
 
-  return getGcd(smallerNum - 1, biggestNum);
+  const findDivisor = (divisor) => {
+    if (num1 % divisor === 0 && num2 % divisor === 0) {
+      return divisor;
+    }
+    return findDivisor(divisor - 1);
+  };
+
+  return findDivisor(smallerNum);
 };
 
 const generateGcdGameInfo = () => {
   const randomNum1 = generateRandomNum(minNum, maxNum);
   const randomNum2 = generateRandomNum(minNum, maxNum);
 
-  const smallerNum = Math.min(randomNum1, randomNum2);
-  const biggestNum = Math.max(randomNum1, randomNum2);
-
   const question = `${randomNum1} ${randomNum2}`;
-  const correctAnswer = `${getGcd(smallerNum, biggestNum)}`;
+  const correctAnswer = `${getGcd(randomNum1, randomNum2)}`;
   return cons(question, correctAnswer);
 };
 
