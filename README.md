@@ -25,10 +25,18 @@ $ brain-even
 $ brain-calc
 ```
 
+```sh
+$ brain-gcd
+```
+
 ## Brain-even How-To video
 
-<a href="https://asciinema.org/a/225340"><img src="https://asciinema.org/a/225340.svg" width="100%"/></a>
+<a href="https://asciinema.org/a/225852"><img src="https://asciinema.org/a/225852.svg" width="100%"/></a>
 
 ## Brain-calc How-To video
 
-<a href="https://asciinema.org/a/225575"><img src="https://asciinema.org/a/225575.svg" width="100%"/></a>
+<a href="https://asciinema.org/a/225853"><img src="https://asciinema.org/a/225853.svg" width="100%"/></a>
+
+## Brain-gcd How-To video
+
+<a href="https://asciinema.org/a/225855"><img src="https://asciinema.org/a/225855.svg" width="100%"/></a>
