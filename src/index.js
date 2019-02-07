@@ -9,38 +9,35 @@ export const brainGames = () => {
 };
 
 // --- game engine code starts here ---
-const getDescription = game => car(game);
-const getInfo = game => cdr(game);
-const getQuestion = info => car(info);
-const getAnswer = info => cdr(info);
+const getQuestion = gameInfo => car(gameInfo);
+const getAnswer = gameInfo => cdr(gameInfo);
 
-// this is random number function
-// minNumber used for avoid zero in randomFunction result
-export const generateRandomNum = (min, max) => Math.floor(Math.random() * (max - min) + min);
+export const brainGameEngine = (description, game) => {
+  console.log(`Welcome to the Brain Games!\n${description}\n`);
 
-export const brainGameEngine = (game) => {
-  console.log(`Welcome to the Brain Games!\n${getDescription(game())}\n`);
+  const playerName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${playerName}!\n`);
 
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!\n`);
+  const questionNumber = 3;
 
-  let questionNumber = 3;
-
-  for (; questionNumber > 0; questionNumber -= 1) {
-    const info = getInfo(game());
-    const question = getQuestion(info);
-    const correctAnswer = getAnswer(info);
-    console.log(`Question: ${question}`);
-    const playerAnswer = readlineSync.question('Your answer: ');
-    if (correctAnswer !== playerAnswer) {
-      console.log(`"${playerAnswer}" is wrong answer ;(.`);
-      console.log(`Correct answer was "${correctAnswer}".`);
-      console.log(`Let's try again, ${name}!`);
+  for (let i = questionNumber; i >= 0; i -= 1) {
+    if (i === 0) {
+      console.log(`Congratulations, ${playerName}!`);
       break;
     }
-    console.log('Correct!');
-  }
+    const gameInfo = game();
+    const question = getQuestion(gameInfo);
+    const correctAnswer = getAnswer(gameInfo);
 
-  if (questionNumber === 0) console.log(`Congratulations, ${name}!`);
+    console.log(`Question: ${question}`);
+    const playerAnswer = readlineSync.question('Your answer: ');
+    if (correctAnswer === playerAnswer) console.log('Correct!');
+    else {
+      console.log(`"${playerAnswer}" is wrong answer ;(.`);
+      console.log(`Correct answer was "${correctAnswer}".`);
+      console.log(`Let's try again, ${playerName}!`);
+      break;
+    }
+  }
 };
 // --- game engine code ends here ---

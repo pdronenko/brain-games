@@ -1,4 +1,5 @@
-import { generateRandomNum, brainGameEngine } from '..';
+import { brainGameEngine } from '..';
+import generateRandomNum from '../utils';
 import { cons } from 'hexlet-pairs';
 
 const description = 'What is the result of the expression?';
@@ -26,7 +27,7 @@ const brainCalcGame = () => {
 
   const question = `${randomNum1} ${operator} ${randomNum2}`;
   const correctAnswer = `${getOperation(operator, randomNum1, randomNum2)}`;
-  return cons(description, cons(question, correctAnswer));
+  return cons(question, correctAnswer);
 };
 
-export default () => brainGameEngine(brainCalcGame);
+export default () => brainGameEngine(description, brainCalcGame);
