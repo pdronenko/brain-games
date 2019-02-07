@@ -25,7 +25,7 @@ const getOperationResult = (operator, num1, num2) => {
   }
 };
 
-const brainCalcGame = () => {
+const generateCalcGameInfo = () => {
   const randomNum1 = generateRandomNum(minNum, maxNum);
   const randomNum2 = generateRandomNum(minNum, maxNum);
 
@@ -36,4 +36,4 @@ const brainCalcGame = () => {
   return cons(question, correctAnswer);
 };
 
-export default () => brainGameEngine(description, brainCalcGame);
+export default () => brainGameEngine(description, generateCalcGameInfo);
