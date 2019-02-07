@@ -18,9 +18,9 @@ export const brainGameEngine = (description, game) => {
   const playerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${playerName}!\n`);
 
-  const questionNumber = 3;
+  const questionsToPlayerCount = 3;
 
-  for (let i = questionNumber; i >= 0; i -= 1) {
+  for (let i = questionsToPlayerCount; i >= 0; i -= 1) {
     if (i === 0) {
       console.log(`Congratulations, ${playerName}!`);
       break;
