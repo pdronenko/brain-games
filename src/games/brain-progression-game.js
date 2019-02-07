@@ -1,34 +1,39 @@
 import { brainGameEngine } from '..';
 import generateRandomNum from '../utils';
-import { cons } from 'hexlet-pairs';
+import { cons, car, cdr } from 'hexlet-pairs';
 
 const description = 'What number is missing in the progression?';
 const minNum = 1;
 const maxNum = 10;
-let answerNum = 0;
+const getAnswer = info => car(info);
+const getProgString = info => cdr(info);
 
-const generateProg = (progStartNum, constant, questionNum) => {
-  const iter = (num, str, counter) => {
-    if (counter === 0) {
-      return str;
+const generateProg = (progStartNum, constant, hiddenNum) => {
+  let currentNum = progStartNum;
+  let answerNum = 0;
+  let progString = '';
+
+  for (let i = minNum; i <= maxNum; i += 1) {
+    if (i !== hiddenNum) {
+      progString = `${progString} ${currentNum}`;
+      currentNum += constant;
+    } else {
+      answerNum = currentNum;
+      currentNum += constant;
+      progString = `${progString} ..`;
     }
-    let string = `${str} ${num}`;
-    if (counter === questionNum) {
-      answerNum = num;
-      string = `${str} ..`;
-    }
-    return iter(num + constant, string, counter - 1);
-  };
-  return iter(progStartNum, '', maxNum);
+  }
+  return cons(answerNum, progString);
 };
 
 const generateProgGameInfo = () => {
-  const constant = generateRandomNum(minNum, maxNum);
   const progStartNum = generateRandomNum(minNum, maxNum);
-  const questionNum = generateRandomNum(minNum, maxNum);
+  const constant = generateRandomNum(minNum, maxNum);
+  const hiddenNum = generateRandomNum(minNum, maxNum);
 
-  const question = generateProg(progStartNum, constant, questionNum);
-  const correctAnswer = `${answerNum}`;
+  const progressionInfo = generateProg(progStartNum, constant, hiddenNum);
+  const question = getProgString(progressionInfo);
+  const correctAnswer = `${getAnswer(progressionInfo)}`;
   return cons(question, correctAnswer);
 };
 
