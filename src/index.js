@@ -11,14 +11,14 @@ export const brainGames = () => {
 // --- game engine code starts here ---
 const getQuestion = gameInfo => car(gameInfo);
 const getAnswer = gameInfo => cdr(gameInfo);
+const questionsToPlayerCount = 3;
 
 export const brainGameEngine = (description, game) => {
-  console.log(`Welcome to the Brain Games!\n${description}\n`);
+  console.log('Welcome to the Brain Games!');
+  console.log(description);
 
-  const playerName = readlineSync.question('May I have your name? ');
+  const playerName = readlineSync.question('\nMay I have your name? ');
   console.log(`Hello, ${playerName}!\n`);
-
-  const questionsToPlayerCount = 3;
 
   for (let i = questionsToPlayerCount; i > 0; i -= 1) {
     const gameInfo = game();
