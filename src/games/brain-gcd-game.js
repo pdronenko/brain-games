@@ -8,15 +8,11 @@ const maxNum = 100;
 
 const getGcd = (num1, num2) => {
   const smallerNum = Math.min(num1, num2);
+  const biggerNum = Math.max(num1, num2);
 
-  const findDivisor = (divisor) => {
-    if (num1 % divisor === 0 && num2 % divisor === 0) {
-      return divisor;
-    }
-    return findDivisor(divisor - 1);
-  };
+  const iter = (num, divisor) => (num % divisor === 0 ? divisor : iter(divisor, num % divisor));
 
-  return findDivisor(smallerNum);
+  return iter(biggerNum, smallerNum);
 };
 
 const generateGcdGameInfo = () => {
