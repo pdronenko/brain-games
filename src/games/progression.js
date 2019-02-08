@@ -1,28 +1,21 @@
 import brainGameEngine from '..';
 import generateRandomNum from '../utils';
-import { cons, car, cdr } from 'hexlet-pairs';
+import { cons } from 'hexlet-pairs';
 
 const description = 'What number is missing in the progression?';
 const minNum = 0;
 const minStepNum = 1;
 const maxNum = 9;
 const finishPosition = 10;
-const getAnswer = info => car(info);
-const getProgString = info => cdr(info);
 
-const generateProgAndAnswer = (progStartNum, progStep, hiddenNumPosition) => {
-  let answerNum = 0;
+const generateProgString = (progStartNum, progStep, hiddenNumPosition) => {
   let progString = '';
 
   for (let i = 0; i < finishPosition; i += 1) {
-    let nextStepNum = progStartNum + (progStep * i);
-    if (i === hiddenNumPosition) {
-      answerNum = nextStepNum;
-      nextStepNum = '..';
-    }
+    const nextStepNum = i !== hiddenNumPosition ? progStartNum + (progStep * i) : '..';
     progString = `${progString} ${nextStepNum}`;
   }
-  return cons(answerNum, progString);
+  return progString;
 };
 
 const generateProgGameInfo = () => {
@@ -30,9 +23,8 @@ const generateProgGameInfo = () => {
   const progStep = generateRandomNum(minStepNum, maxNum);
   const hiddenNumPosition = generateRandomNum(minNum, maxNum);
 
-  const progressionInfo = generateProgAndAnswer(progStartNum, progStep, hiddenNumPosition);
-  const correctAnswer = `${getAnswer(progressionInfo)}`;
-  const question = getProgString(progressionInfo);
+  const correctAnswer = `${progStartNum + (progStep * hiddenNumPosition)}`;
+  const question = generateProgString(progStartNum, progStep, hiddenNumPosition);
   return cons(question, correctAnswer);
 };
 
