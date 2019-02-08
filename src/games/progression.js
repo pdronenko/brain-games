@@ -1,4 +1,4 @@
-import { brainGameEngine } from '..';
+import brainGameEngine from '..';
 import generateRandomNum from '../utils';
 import { cons, car, cdr } from 'hexlet-pairs';
 

@@ -1,19 +1,11 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from 'hexlet-pairs';
 
-// this code is only for brain-games task
-export const brainGames = () => {
-  console.log('Welcome to the Brain Games!\n');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-};
-
-// --- game engine code starts here ---
 const getQuestion = gameInfo => car(gameInfo);
 const getAnswer = gameInfo => cdr(gameInfo);
 const questionsToPlayerCount = 3;
 
-export const brainGameEngine = (description, game) => {
+const brainGameEngine = (description, game) => {
   console.log('Welcome to the Brain Games!');
   console.log(description);
 
@@ -37,4 +29,5 @@ export const brainGameEngine = (description, game) => {
   }
   console.log(`Congratulations, ${playerName}!`);
 };
-// --- game engine code ends here ---
+
+export default brainGameEngine;
