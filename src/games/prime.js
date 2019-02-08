@@ -10,8 +10,10 @@ const minDivisor = 2;
 const isPrime = (num) => {
   if (num < 2) return false;
   const iter = (divisor) => {
-    if (divisor >= Math.sqrt(num)) return true;
-    return num % divisor === 0 ? false : iter(divisor + 1);
+    if (divisor < Math.sqrt(num)) {
+      return num % divisor === 0 ? false : iter(divisor + 1);
+    }
+    return true;
   };
 
   return iter(minDivisor);
