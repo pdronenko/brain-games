@@ -6,7 +6,7 @@ const description = 'What number is missing in the progression?';
 const minNum = 0;
 const minStepNum = 1;
 const maxNum = 9;
-const finishPosition = 10;
+
 const getAnswer = info => car(info);
 const getProgString = info => cdr(info);
 
@@ -14,7 +14,7 @@ const generateProgAndAnswer = (progStartNum, progStep, hiddenNumPosition) => {
   let answerNum = 0;
   let progString = '';
 
-  for (let i = 0; i < finishPosition; i += 1) {
+  for (let i = 0; i <= maxNum; i += 1) {
     let nextStepNum = progStartNum + (progStep * i);
     if (i === hiddenNumPosition) {
       answerNum = nextStepNum;
