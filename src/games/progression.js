@@ -15,6 +15,7 @@ const generateProgString = (progStartNum, progStep, hiddenNumPosition) => {
     const nextStepNum = i !== hiddenNumPosition ? progStartNum + (progStep * i) : '..';
     progString = `${progString} ${nextStepNum}`;
   }
+  
   return progString;
 };
 
