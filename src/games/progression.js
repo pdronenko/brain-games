@@ -16,7 +16,7 @@ const generateProgString = (progStartNum, progStep, hiddenNumPosition) => {
     progString = `${progString} ${nextStepNum}`;
   }
 
-  return progString;
+  return progString.trim();
 };
 
 const generateProgGameInfo = () => {
