@@ -5,10 +5,12 @@ import { cons } from 'hexlet-pairs';
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const minNum = 2;
 const maxNum = 999;
-const minDivisor = 2;
+
 
 const isPrime = (num) => {
   if (num < 2) return false;
+  const minDivisor = 2;
+
   const iter = (divisor) => {
     if (divisor < Math.sqrt(num)) {
       return num % divisor === 0 ? false : iter(divisor + 1);
