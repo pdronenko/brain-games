@@ -16,7 +16,7 @@ const isPrime = (num) => {
   return iter(minDivisor);
 };
 
-const generateGcdGameInfo = () => {
+const generatePrimeGameInfo = () => {
   const randomNum = generateRandomNum(minNum, maxNum);
 
   const question = `${randomNum}`;
@@ -24,4 +24,4 @@ const generateGcdGameInfo = () => {
   return cons(question, correctAnswer);
 };
 
-export default () => brainGameEngine(description, generateGcdGameInfo);
+export default () => brainGameEngine(description, generatePrimeGameInfo);
