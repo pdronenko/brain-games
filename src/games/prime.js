@@ -8,6 +8,7 @@ const maxNum = 999;
 const minDivisor = 2;
 
 const isPrime = (num) => {
+  if (num < 2) return false;
   const iter = (divisor) => {
     if (divisor >= Math.sqrt(num)) return true;
     return num % divisor === 0 ? false : iter(divisor + 1);
