@@ -37,14 +37,18 @@ $ brain-progression
 $ brain-prime
 ```
 
-## Brain-even How-To video
+## brain-even How-To video
 
 <a href="https://asciinema.org/a/225852"><img src="https://asciinema.org/a/225852.svg" width="100%"/></a>
 
-## Brain-calc How-To video
+## brain-calc How-To video
 
 <a href="https://asciinema.org/a/225853"><img src="https://asciinema.org/a/225853.svg" width="100%"/></a>
 
-## Brain-gcd How-To video
+## brain-gcd How-To video
 
 <a href="https://asciinema.org/a/225855"><img src="https://asciinema.org/a/225855.svg" width="100%"/></a>
+
+## brain-prime How-To video
+
+<a href="https://asciinema.org/a/226223"><img src="https://asciinema.org/a/226223.svg" width="100%"/></a>
