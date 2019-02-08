@@ -6,7 +6,7 @@ const description = 'Find the greatest common divisor of given numbers.';
 const minNum = 2;
 const maxNum = 99;
 
-const getGcd = (num, divisor) => (num % divisor === 0 ? divisor : getGcd(divisor, num % divisor));
+const getGcd = (num, divisor) => (divisor === 0 ? num : getGcd(divisor, num % divisor));
 
 const generateGcdGameInfo = () => {
   const randomNum1 = generateRandomNum(minNum, maxNum);
