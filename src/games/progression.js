@@ -5,23 +5,24 @@ import { cons } from 'hexlet-pairs';
 const description = 'What number is missing in the progression?';
 const minNum = 0;
 const maxNum = 9;
-const minStepNum = 1;
 const progressionLength = 10;
 
 const generateProgString = (progStartNum, progStep, hiddenNumPosition) => {
-  let progString = '';
+  const iter = (str, i) => {
+    if (i < progressionLength) {
+      const nextStepNum = i !== hiddenNumPosition ? progStartNum + (progStep * i) : '..';
+      return iter(`${str} ${nextStepNum}`, i + 1);
+    }
 
-  for (let i = 0; i < progressionLength; i += 1) {
-    const nextStepNum = i !== hiddenNumPosition ? progStartNum + (progStep * i) : '..';
-    progString = `${progString} ${nextStepNum}`;
-  }
+    return str.trim();
+  };
 
-  return progString.trim();
+  return iter('', 0);
 };
 
 const generateProgGameInfo = () => {
   const progStartNum = generateRandomNum(minNum, maxNum);
-  const progStep = generateRandomNum(minStepNum, maxNum);
+  const progStep = generateRandomNum(1, maxNum);
   const hiddenNumPosition = generateRandomNum(minNum, progressionLength - 1);
 
   const correctAnswer = `${progStartNum + (progStep * hiddenNumPosition)}`;
