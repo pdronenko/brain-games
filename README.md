@@ -1,8 +1,8 @@
 # brain-games
 
-##
-
 Simple brain games for CLI. Enjoy :-)
+
+##
 
 In this project I got acquainted with the **JavaScript** ecosystem, published my first package in **npm**. Start using **Eslint**, **Babel** and **Git**. To emprove my development skills, I moved to **Linux** and start often use **CLI** (how could I live before without a console?).
 
