@@ -1,12 +1,12 @@
 # brain-games
 
-### brain games for CLI
-
 ##
 
-В этом проекте я познакомился с экосистемой JavaScript, опубликовал свой первый пакет в npm. Подружился с Eslint, Babel и Git. Для полного погружения в разработку пересел на Linux, начал активно пользоваться CLI (как я мог жить раньше без консоли?).
+Simple brain games for CLI. Enjoy :-)
 
 In this project I got acquainted with the **JavaScript** ecosystem, published my first package in **npm**. Start using **Eslint**, **Babel** and **Git**. To emprove my development skills, I moved to **Linux** and start often use **CLI** (how could I live before without a console?).
+
+В этом проекте я познакомился с экосистемой **JavaScript**, опубликовал свой первый пакет в **npm**. Подружился с **Eslint**, **Babel** и **Git**. Для полного погружения в разработку пересел на **Linux**, начал активно пользоваться **CLI** (как я мог жить раньше без консоли?).
 
 ##
 
