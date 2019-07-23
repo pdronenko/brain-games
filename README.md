@@ -1,10 +1,14 @@
+# brain-games
+
+### brain games for CLI
+
 ##
 
-This is Brain Game repository, created by Pavel Dronenko during the first project of the Hexlet educational course
+В этом проекте я познакомился с экосистемой JavaScript, опубликовал свой первый пакет в npm. Подружился с Eslint, Babel и Git. Для полного погружения в разработку пересел на Linux, начал активно пользоваться CLI (как я мог жить раньше без консоли?).
+
+In this project I got acquainted with the **JavaScript** ecosystem, published my first package in **npm**. Start using **Eslint**, **Babel** and **Git**. To emprove my development skills, I moved to **Linux** and start often use **CLI** (how could I live before without a console?).
 
 ##
-
-# project-lvl1-s438
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/4c9cc223b26f609df2cd/maintainability)](https://codeclimate.com/github/pdronenko/project-lvl1-s438/maintainability)
 [![Build Status](https://travis-ci.org/pdronenko/project-lvl1-s438.svg?branch=master)](https://travis-ci.org/pdronenko/project-lvl1-s438)
